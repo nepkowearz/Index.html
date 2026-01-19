@@ -1,121 +1,116 @@
-      <!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepko Wearz | Wear it loud, wear it proud</title>  <!-- Browser tab logo (favicon) -->  <link rel="icon" type="image/png" href="logo.png">  <style>
+  <title>Nepko Wearz | Wear it loud, wear it proud</title>  <!-- Browser tab logo -->  <link rel="icon" type="image/png" href="logo.png">  <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #f7f7fb;
       color: #222;
-      display: flex;
     }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: linear-gradient(180deg, #6b3fb3, #4a2a87);
-      color: #fff;
-      padding: 20px;
-      min-height: 100vh;
-    }
-    .sidebar h2 {
-      font-size: 16px;
-      margin-top: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      padding-bottom: 6px;
-    }
-    .sidebar a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin: 8px 0;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    /* Main */
-    .main {
-      flex: 1;
-      padding: 20px 30px;
-    }
-
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 25px;
+      padding: 12px 16px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
-    .brand img {
-      height: 50px;
-    }
-    .brand strong {
-      font-size: 20px;
+
+    .brand img { height: 42px; }
+    .brand strong { font-size: 18px; }
+
+    .menu-btn {
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
     }
 
     .search {
       flex: 1;
-      max-width: 350px;
+      max-width: 320px;
+      margin: 0 12px;
     }
+
     .search input {
       width: 100%;
-      padding: 10px 14px;
+      padding: 8px 14px;
       border-radius: 20px;
       border: 1px solid #ccc;
-      outline: none;
     }
 
     .cart-summary {
-      font-size: 14px;
       background: #6b3fb3;
       color: #fff;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      background: #6b3fb3;
+      color: #fff;
+      padding: 16px;
+    }
+
+    .mobile-menu h3 { margin-top: 12px; }
+    .mobile-menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    /* MAIN */
+    .main {
+      padding: 20px;
     }
 
     h2 {
-      margin-top: 35px;
       color: #4a2a87;
+      margin-top: 30px;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      margin-top: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
     }
 
     .card {
       background: #fff;
       border-radius: 14px;
-      padding: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       text-align: center;
       position: relative;
-      transition: transform 0.2s ease;
     }
-    .card:hover { transform: translateY(-4px); }
 
     .card img {
       width: 100%;
-      height: 210px;
+      height: 200px;
       object-fit: cover;
       border-radius: 10px;
     }
 
-    .price {
-      font-weight: bold;
-      margin: 6px 0;
-    }
+    .price { font-weight: bold; margin: 6px 0; }
 
     .badge {
       position: absolute;
@@ -129,30 +124,27 @@
     }
 
     button {
-      padding: 8px 12px;
+      padding: 8px 14px;
       border: none;
       border-radius: 20px;
       background: #6b3fb3;
       color: #fff;
       cursor: pointer;
       font-size: 13px;
-      margin-top: 6px;
     }
 
-    button.out {
-      background: #aaa;
-      cursor: not-allowed;
-    }
+    button.out { background: #aaa; cursor: not-allowed; }
 
-    /* Checkout */
+    /* CHECKOUT */
     .checkout {
       margin-top: 40px;
       background: #fff;
       padding: 20px;
       border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      max-width: 500px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      max-width: 520px;
     }
+
     .checkout input {
       width: 100%;
       padding: 10px;
@@ -161,49 +153,47 @@
       border: 1px solid #ccc;
     }
 
+    /* FOOTER */
     footer {
-      text-align: center;
-      margin: 40px 0 10px;
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
       font-size: 14px;
-      color: #666;
     }
 
-    @media (max-width: 900px) {
-      body { flex-direction: column; }
-      .sidebar { width: 100%; min-height: auto; }
+    footer h4 { margin-bottom: 6px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-btn { display: block; }
+      .search { display: none; }
     }
   </style></head>
-<body><div class="sidebar">
-  <h2>Men</h2>
-  <a href="#">Casual</a>
-  <a href="#">Professional</a>
-  <a href="#">Common Wear</a>
-  <a href="#">Shoes</a>  <h2>Women</h2>
-  <a href="#">Casual</a>
-  <a href="#">Professional</a>
-  <a href="#">Common Wear</a>
-  <a href="#">Shoes</a>  <h2>Accessories</h2>
+<body><header>
+  <div class="brand">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <img src="logo.png" alt="Nepko Wearz">
+    <strong>Nepko Wearz</strong>
+  </div>  <div class="search">
+    <input type="text" placeholder="Search products (demo)">
+  </div>  <div class="cart-summary">
+    Cart: Rs. <span id="total">0</span>
+  </div>
+</header><div class="mobile-menu" id="menu">
+  <h3>Men</h3>
+  <a href="#">Casual</a><a href="#">Professional</a><a href="#">Common</a><a href="#">Shoes</a>
+  <h3>Women</h3>
+  <a href="#">Casual</a><a href="#">Professional</a><a href="#">Common</a><a href="#">Shoes</a>
+  <h3>Accessories</h3>
   <a href="#">Hand Bags</a>
-</div><div class="main">
-  <header>
-    <div class="brand">
-      <img src="logo.png" alt="Nepko Wearz">
-      <strong>Nepko Wearz</strong>
-    </div><div class="search">
-  <input type="text" placeholder="Search products... (demo)" />
-</div>
-
-<div class="cart-summary">
-  Cart Total: Rs. <span id="total">0</span>
-</div>
-
-  </header>  <h2>🔥 Highest Selling</h2>
+</div><div class="main">  <h2>🔥 Highest Selling</h2>
   <div class="products">
     <div class="card">
       <img src="https://via.placeholder.com/300x400">
       <p>Bestseller Shirt</p>
       <p class="price">Rs. 2500</p>
-      <button onclick="addToCart(2500, 'Bestseller Shirt')">Add to Cart</button>
+      <button onclick="addToCart('Bestseller Shirt', 2500)">Add to Cart</button>
     </div><div class="card">
   <span class="badge">Out of Stock</span>
   <img src="https://via.placeholder.com/300x400">
@@ -212,29 +202,29 @@
   <button class="out" disabled>Out of Stock</button>
 </div>
 
-<div class="card">
-  <img src="https://via.placeholder.com/300x400">
-  <p>Top Rated Pants</p>
-  <p class="price">Rs. 3000</p>
-  <button onclick="addToCart(3000, 'Top Rated Pants')">Add to Cart</button>
-</div>
-
   </div>  <div class="checkout">
     <h3>Checkout (Cash on Delivery)</h3>
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="text" id="phone" placeholder="Phone Number" required>
-    <input type="text" id="address" placeholder="Delivery Address" required>
+    <input id="name" placeholder="Full Name">
+    <input id="phone" placeholder="Phone Number">
+    <input id="address" placeholder="Delivery Address">
     <button onclick="sendOrder()">Send Order on WhatsApp</button>
-  </div>  <footer>
-    Nepko Wearz © 2025 · Wear it loud, wear it proud
-  </footer>
-</div><script>
+  </div></div><footer>
+  <h4>Cash on Delivery</h4>
+  <p>We offer Cash on Delivery all over Nepal.</p>  <h4>Return Policy</h4>
+  <p>Returns accepted within 3 days if product is unused and in original condition.</p>  <h4>Contact</h4>
+  <p>📞 9705783724<br>📲 WhatsApp Orders Only</p>  <p><strong>Nepko Wearz © 2025</strong><br>Wear it loud, wear it proud</p>
+</footer><script>
   let total = 0;
-  let items = [];
+  let cart = [];
 
-  function addToCart(price, name) {
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function addToCart(name, price) {
+    cart.push(name + ' - Rs. ' + price);
     total += price;
-    items.push(name + ' (Rs. ' + price + ')');
     document.getElementById('total').innerText = total;
   }
 
@@ -243,14 +233,20 @@
     const phone = document.getElementById('phone').value;
     const address = document.getElementById('address').value;
 
-    if (!name || !phone || !address || items.length === 0) {
-      alert('Please fill all details and add at least one item to cart.');
+    if (!name || !phone || !address || cart.length === 0) {
+      alert('Please fill all details and add items to cart.');
       return;
     }
 
-    const message = `Hello Nepko Wearz,%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0A%0AItems:%0A${items.join('%0A')}%0A%0ATotal: Rs. ${total}%0APayment: Cash on Delivery`;
+    let text = 'Hello Nepko Wearz,%0A%0A';
+    text += 'Name: ' + name + '%0A';
+    text += 'Phone: ' + phone + '%0A';
+    text += 'Address: ' + address + '%0A%0A';
+    text += 'Order Items:%0A' + cart.join('%0A') + '%0A%0A';
+    text += 'Total: Rs. ' + total + '%0A';
+    text += 'Payment: Cash on Delivery';
 
-    window.open('https://wa.me/message/U27WDKSBIJQZL1?text=' + message, '_blank');
+    window.open('https://wa.me/message/U27WDKSBIJQZL1?text=' + text, '_blank');
   }
 </script></body>
 </html>
