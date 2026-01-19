@@ -1,27 +1,27 @@
-<!DOCTYPE html><html lang="en">
+      <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepko Wearz | Wear it loud, wear it proud</title>
-  <style>
+  <title>Nepko Wearz | Wear it loud, wear it proud</title>  <!-- Browser tab logo (favicon) -->  <link rel="icon" type="image/png" href="logo.png">  <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fdfaf2;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7fb;
       color: #222;
       display: flex;
     }
+
     /* Sidebar */
     .sidebar {
-      width: 240px;
-      background: #6b3fb3;
+      width: 260px;
+      background: linear-gradient(180deg, #6b3fb3, #4a2a87);
       color: #fff;
       padding: 20px;
       min-height: 100vh;
     }
     .sidebar h2 {
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 20px;
       border-bottom: 1px solid rgba(255,255,255,0.3);
       padding-bottom: 6px;
@@ -32,68 +32,91 @@
       text-decoration: none;
       margin: 8px 0;
       font-size: 14px;
+      opacity: 0.9;
     }
+
     /* Main */
     .main {
       flex: 1;
-      padding: 20px;
+      padding: 20px 30px;
     }
+
     header {
-      text-align: center;
-      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
     }
-    header img {
-      max-width: 220px;
-      width: 80%;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .bio {
-      max-width: 800px;
-      margin: 10px auto;
-      font-size: 15px;
-      color: #444;
+    .brand img {
+      height: 50px;
     }
+    .brand strong {
+      font-size: 20px;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 350px;
+    }
+    .search input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .cart-summary {
+      font-size: 14px;
+      background: #6b3fb3;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 20px;
+    }
+
     h2 {
-      color: #6b3fb3;
-      margin-top: 40px;
+      margin-top: 35px;
+      color: #4a2a87;
     }
+
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
       margin-top: 15px;
     }
+
     .card {
       background: #fff;
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       text-align: center;
       position: relative;
+      transition: transform 0.2s ease;
     }
+    .card:hover { transform: translateY(-4px); }
+
     .card img {
       width: 100%;
-      height: 200px;
+      height: 210px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
+
     .price {
       font-weight: bold;
       margin: 6px 0;
     }
-    button {
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      background: #6b3fb3;
-      color: #fff;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    button:hover { background: #552c94; }
-    .out {
-      background: #999;
-      cursor: not-allowed;
-    }
+
     .badge {
       position: absolute;
       top: 10px;
@@ -104,59 +127,130 @@
       padding: 4px 8px;
       border-radius: 4px;
     }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      background: #6b3fb3;
+      color: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    button.out {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    /* Checkout */
+    .checkout {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      max-width: 500px;
+    }
+    .checkout input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
+      margin: 40px 0 10px;
       font-size: 14px;
-      color: #555;
+      color: #666;
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 900px) {
       body { flex-direction: column; }
       .sidebar { width: 100%; min-height: auto; }
     }
-  </style>
-</head>
+  </style></head>
 <body><div class="sidebar">
   <h2>Men</h2>
-  <a href="#men-casual">Casual</a>
-  <a href="#men-professional">Professional</a>
-  <a href="#men-common">Common Wear</a>
-  <a href="#men-shoes">Shoes</a>  <h2>Women</h2>
-  <a href="#women-casual">Casual</a>
-  <a href="#women-professional">Professional</a>
-  <a href="#women-common">Common Wear</a>
-  <a href="#women-shoes">Shoes</a>  <h2>Accessories</h2>
-  <a href="#handbags">Hand Bags</a>
+  <a href="#">Casual</a>
+  <a href="#">Professional</a>
+  <a href="#">Common Wear</a>
+  <a href="#">Shoes</a>  <h2>Women</h2>
+  <a href="#">Casual</a>
+  <a href="#">Professional</a>
+  <a href="#">Common Wear</a>
+  <a href="#">Shoes</a>  <h2>Accessories</h2>
+  <a href="#">Hand Bags</a>
 </div><div class="main">
   <header>
-    <img src="logo.png" alt="Nepko Wearz Logo">
-    <div class="bio">
-      <strong>Nepko Wearz</strong> · Estd. 2025 · Kathmandu<br>
-      Born in Nepal. Worn with pride.<br>
-      <strong>Wear it loud, wear it proud.</strong>
-    </div>
+    <div class="brand">
+      <img src="logo.png" alt="Nepko Wearz">
+      <strong>Nepko Wearz</strong>
+    </div><div class="search">
+  <input type="text" placeholder="Search products... (demo)" />
+</div>
+
+<div class="cart-summary">
+  Cart Total: Rs. <span id="total">0</span>
+</div>
+
   </header>  <h2>🔥 Highest Selling</h2>
   <div class="products">
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Bestseller Shirt</p><p class="price">Rs. 2,500</p><button onclick="order('Bestseller Shirt - Rs. 2500')">Order</button></div>
-    <div class="card"><span class="badge">Out of Stock</span><img src="https://via.placeholder.com/300x400"><p>Popular Kurti</p><p class="price">Rs. 2,800</p><button class="out" disabled>Out of Stock</button></div>
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Top Rated Pants</p><p class="price">Rs. 3,000</p><button onclick="order('Top Rated Pants - Rs. 3000')">Order</button></div>
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Customer Choice Tee</p><p class="price">Rs. 1,600</p><button onclick="order('Customer Choice Tee - Rs. 1600')">Order</button></div>
-    <div class="card"><span class="badge">Out of Stock</span><img src="https://via.placeholder.com/300x400"><p>Trending Shoes</p><p class="price">Rs. 4,200</p><button class="out" disabled>Out of Stock</button></div>
-  </div>  <h2>✨ Trending Now</h2>
-  <div class="products">
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Oversized Tee</p><p class="price">Rs. 1,700</p><button onclick="order('Oversized Tee - Rs. 1700')">Order</button></div>
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Modern Kurti</p><p class="price">Rs. 2,900</p><button onclick="order('Modern Kurti - Rs. 2900')">Order</button></div>
-    <div class="card"><span class="badge">Out of Stock</span><img src="https://via.placeholder.com/300x400"><p>Street Jacket</p><p class="price">Rs. 4,800</p><button class="out" disabled>Out of Stock</button></div>
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Office Chic Wear</p><p class="price">Rs. 3,300</p><button onclick="order('Office Chic Wear - Rs. 3300')">Order</button></div>
-    <div class="card"><img src="https://via.placeholder.com/300x400"><p>Designer Pants</p><p class="price">Rs. 3,700</p><button onclick="order('Designer Pants - Rs. 3700')">Order</button></div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400">
+      <p>Bestseller Shirt</p>
+      <p class="price">Rs. 2500</p>
+      <button onclick="addToCart(2500, 'Bestseller Shirt')">Add to Cart</button>
+    </div><div class="card">
+  <span class="badge">Out of Stock</span>
+  <img src="https://via.placeholder.com/300x400">
+  <p>Popular Kurti</p>
+  <p class="price">Rs. 2800</p>
+  <button class="out" disabled>Out of Stock</button>
+</div>
+
+<div class="card">
+  <img src="https://via.placeholder.com/300x400">
+  <p>Top Rated Pants</p>
+  <p class="price">Rs. 3000</p>
+  <button onclick="addToCart(3000, 'Top Rated Pants')">Add to Cart</button>
+</div>
+
+  </div>  <div class="checkout">
+    <h3>Checkout (Cash on Delivery)</h3>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <input type="text" id="address" placeholder="Delivery Address" required>
+    <button onclick="sendOrder()">Send Order on WhatsApp</button>
   </div>  <footer>
-    <p>Cash on Delivery Available · Orders via WhatsApp</p>
-    <p>Nepko Wearz © 2025</p>
+    Nepko Wearz © 2025 · Wear it loud, wear it proud
   </footer>
 </div><script>
-  function order(product) {
-    const message = encodeURIComponent('Hello Nepko Wearz, I want to order: ' + product + '. Payment: Cash on Delivery');
+  let total = 0;
+  let items = [];
+
+  function addToCart(price, name) {
+    total += price;
+    items.push(name + ' (Rs. ' + price + ')');
+    document.getElementById('total').innerText = total;
+  }
+
+  function sendOrder() {
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+
+    if (!name || !phone || !address || items.length === 0) {
+      alert('Please fill all details and add at least one item to cart.');
+      return;
+    }
+
+    const message = `Hello Nepko Wearz,%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0A%0AItems:%0A${items.join('%0A')}%0A%0ATotal: Rs. ${total}%0APayment: Cash on Delivery`;
+
     window.open('https://wa.me/message/U27WDKSBIJQZL1?text=' + message, '_blank');
   }
 </script></body>
-                                                                                                                                                                 </html>
+</html>
