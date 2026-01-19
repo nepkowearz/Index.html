@@ -1,1 +1,153 @@
-
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepko Wearz | Estd. 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fdfaf2;
+      color: #222;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #fdfaf2;
+    }
+    header img {
+      max-width: 220px;
+      width: 80%;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background: #9b6ad6;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #6b3fb3;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .price {
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 6px;
+      background: #6b3fb3;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #552c94;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body><header>
+  <!-- Replace logo.png with your uploaded logo file name -->
+  <img src="logo.png" alt="Nepko Wearz Logo" />
+  <p><strong>Nepko Wearz</strong> · Estd. 2025 · Kathmandu</p>
+</header><nav>
+  <a href="#men">Men</a>
+  <a href="#women">Women</a>
+</nav><section id="men">
+  <h2>Men</h2>  <h3>Pants</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Men Pants" />
+      <p>Men Formal Pants</p>
+      <p class="price">Rs. 2,200</p>
+      <button onclick="order('Men Formal Pants - Rs. 2200')">Order (COD)</button>
+    </div>
+  </div>  <h3>Casual Wear</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Casual Wear" />
+      <p>Casual T-Shirt</p>
+      <p class="price">Rs. 1,200</p>
+      <button onclick="order('Men Casual T-Shirt - Rs. 1200')">Order (COD)</button>
+    </div>
+  </div>  <h3>Office Wear</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Office Wear" />
+      <p>Office Shirt</p>
+      <p class="price">Rs. 1,800</p>
+      <button onclick="order('Men Office Shirt - Rs. 1800')">Order (COD)</button>
+    </div>
+  </div>
+</section><section id="women">
+  <h2>Women</h2>  <h3>Pants</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Women Pants" />
+      <p>Women Pants</p>
+      <p class="price">Rs. 2,000</p>
+      <button onclick="order('Women Pants - Rs. 2000')">Order (COD)</button>
+    </div>
+  </div>  <h3>Casual Wear</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Women Casual" />
+      <p>Casual Top</p>
+      <p class="price">Rs. 1,300</p>
+      <button onclick="order('Women Casual Top - Rs. 1300')">Order (COD)</button>
+    </div>
+  </div>  <h3>Office Wear</h3>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x400" alt="Women Office" />
+      <p>Office Kurti</p>
+      <p class="price">Rs. 2,500</p>
+      <button onclick="order('Women Office Kurti - Rs. 2500')">Order (COD)</button>
+    </div>
+  </div>
+</section><footer>
+  <p>Cash on Delivery Available</p>
+  <p>Orders via WhatsApp · Nepko Wearz © 2025</p>
+</footer><script>
+  function order(product) {
+    const phone = '977XXXXXXXXX'; // replace with your WhatsApp number
+    const message = encodeURIComponent('Hello Nepko Wearz, I want to order: ' + product + '. Payment: Cash on Delivery');
+    window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
+  }
+</script></body>
+</html>
